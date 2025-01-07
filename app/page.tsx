@@ -10,14 +10,18 @@ import { ArrowRight, Brain, Code2, Sparkles, Target, Trophy } from 'lucide-react
 import { AnimatedHero } from '@/components/animated-hero'
 import { AnimatedCard } from '@/components/animated-card'
 import { AnimatedFeature } from '@/components/animated-feature'
+import { HowToUse } from '@/components/how-to-use'
+import { WelcomeModal } from '@/components/welcome-modal'
 
 export default function Home() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <WelcomeModal />
       <WarningModal />
       <div className="space-y-8">
         {/* Hero Section with Animation */}
         <AnimatedHero />
+        <HowToUse />
 
         {/* Stats Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -72,31 +76,34 @@ export default function Home() {
         </div>
 
         {/* Question Sets Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
-          <AnimatedCard
-            title="450 DSA Questions"
-            icon={<Code2 className="w-6 h-6" />}
-            description="Comprehensive coverage of all important DSA topics"
-            linkHref="/questions?set=450"
-            linkText="Start Now"
-            gradient="bg-gradient-to-br from-pink-500 to-orange-400"
-          />
-          <AnimatedCard
-            title="300 DSA Questions"
-            icon={<Target className="w-6 h-6" />}
-            description="Focused set for interview preparation"
-            linkHref="/questions?set=300"
-            linkText="Explore"
-            gradient="bg-gradient-to-br from-green-500 to-teal-400"
-          />
-          <AnimatedCard
-            title="150 DSA Questions"
-            icon={<Sparkles className="w-6 h-6" />}
-            description="Essential problems for quick revision"
-            linkHref="/questions?set=150"
-            linkText="Get Started"
-            gradient="bg-gradient-to-br from-blue-500 to-indigo-400"
-          />
+        <div className="my-12">
+          <h2 className="text-3xl font-bold mb-6 text-center">Choose Your Challenge</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <AnimatedCard
+              title="450 DSA Questions"
+              icon={<Code2 className="w-6 h-6" />}
+              description="Comprehensive coverage of all important DSA topics"
+              linkHref="/questions?set=450"
+              linkText="Start Now"
+              gradient="bg-gradient-to-br from-pink-500 to-orange-400"
+            />
+            <AnimatedCard
+              title="300 DSA Questions"
+              icon={<Target className="w-6 h-6" />}
+              description="Focused set for interview preparation"
+              linkHref="/questions?set=300"
+              linkText="Explore"
+              gradient="bg-gradient-to-br from-green-500 to-teal-400"
+            />
+            <AnimatedCard
+              title="150 DSA Questions"
+              icon={<Sparkles className="w-6 h-6" />}
+              description="Essential problems for quick revision"
+              linkHref="/questions?set=150"
+              linkText="Get Started"
+              gradient="bg-gradient-to-br from-blue-500 to-indigo-400"
+            />
+          </div>
         </div>
 
         {/* Features Section */}

@@ -34,8 +34,8 @@ export function Navigation() {
               <span className="text-xl font-bold group-hover:text-yellow-300 transition-colors duration-200">AlgoVidya</span>
             </Link>
             <div className="hidden md:ml-6 md:flex md:space-x-8">
-              <Link href="/questions" className="text-white hover:bg-purple-700 hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
-                Questions
+              <Link href="/questions" className="text-white hover:bg-purple-700 hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 bg-purple-600">
+                Start Learning
               </Link>
               <Link href="/solved-questions" className="text-white hover:bg-purple-700 hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
                 Solved Questions
