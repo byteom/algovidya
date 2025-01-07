@@ -12,6 +12,7 @@ import { AnimatedCard } from '@/components/animated-card'
 import { AnimatedFeature } from '@/components/animated-feature'
 import { HowToUse } from '@/components/how-to-use'
 import { WelcomeModal } from '@/components/welcome-modal'
+import { ProblemOfTheDay } from '@/components/problem-of-the-day'
 
 export default function Home() {
   return (
@@ -22,6 +23,11 @@ export default function Home() {
         {/* Hero Section with Animation */}
         <AnimatedHero />
         <HowToUse />
+
+        {/* Problem of the Day Section */}
+        <div className="my-12">
+          <ProblemOfTheDay />
+        </div>
 
         {/* Stats Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -57,6 +63,7 @@ export default function Home() {
                 <p className="text-gray-600 dark:text-gray-400">Success Rate</p>
               </div>
             </div>
+          {'>'}
           </div>
         </div>
 
@@ -78,7 +85,7 @@ export default function Home() {
         {/* Question Sets Section */}
         <div className="my-12">
           <h2 className="text-3xl font-bold mb-6 text-center">Choose Your Challenge</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <AnimatedCard
               title="450 DSA Questions"
               icon={<Code2 className="w-6 h-6" />}

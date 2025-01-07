@@ -20,6 +20,10 @@ export interface Question {
       language: string;
       url: string;
     }[];
+    gfgLink?: string; // Optional GeeksForGeeks link
+    links?: {
+      [key: string]: string;
+    };
   }
   
   export const questions: Question[] = [
@@ -74,7 +78,12 @@ export interface Question {
   };`
         }
       },
-      videos: []
+      videos: [],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/find-pair-given-difference1559/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/two-sum/",
+        GeeksForGeeks: "https://practice.geeksforgeeks.org/problems/find-pair-given-difference1559/1"
+      },
     },
     {
       id: 2,
@@ -127,7 +136,12 @@ export interface Question {
   };`
         }
       },
-      videos: []
+      videos: [],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/reverse-a-linked-list/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/reverse-linked-list/",
+        GeeksForGeeks: "https://practice.geeksforgeeks.org/problems/reverse-a-linked-list/1"
+      },
     },
     {
       id: 3,
@@ -187,7 +201,11 @@ export interface Question {
           language: 'English',
           url: 'https://www.youtube.com/embed/1pkOgXD63yU'
         }
-      ]
+      ],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/stock-buy-and-sell-1587115621/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
+      },
     },
     {
       id: 4,
@@ -238,7 +256,11 @@ export interface Question {
           language: 'English',
           url: 'https://www.youtube.com/embed/3OamzN90kPg'
         }
-      ]
+      ],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/detect-duplicate-elements-in-an-array/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/contains-duplicate/"
+      },
     },
     {
       id: 5,
@@ -316,7 +338,11 @@ export interface Question {
           language: 'English',
           url: 'https://www.youtube.com/embed/bNvIQI2wAjk'
         }
-      ]
+      ],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/product-array-puzzle4525/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/product-of-array-except-self/"
+      },
     },
     {
       id: 6,
@@ -382,7 +408,11 @@ export interface Question {
           language: "Hindi",
           url: "https://www.youtube.com/embed/9IZYqostl2M"
         }
-      ]
+      ],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/kadanes-algorithm-1587115620/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/maximum-subarray/"
+      },
     },
     {
       id: 7,
@@ -454,7 +484,11 @@ export interface Question {
           language: 'English',
           url: 'https://www.youtube.com/embed/nIVW4P8b1VA'
         }
-      ]
+      ],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/find-minimum-in-rotated-sorted-array5409/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/"
+      },
     },
     {
       id: 8,
@@ -505,7 +539,11 @@ export interface Question {
           language: 'English',
           url: 'https://www.youtube.com/embed/5Km3utixwZs'
         }
-      ]
+      ],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/set-bits0143/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/number-of-1-bits/"
+      },
     },
     {
       id: 9,
@@ -619,7 +657,11 @@ export interface Question {
           language: 'English',
           url: 'https://www.youtube.com/embed/M65xBewcqcI'
         }
-      ]
+      ],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/matrix-with-0-1-rows-and-columns3742/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/set-matrix-zeroes/"
+      },
     },
     {
       id: 10,
@@ -696,7 +738,11 @@ export interface Question {
           language: 'English',
           url: 'https://www.youtube.com/embed/6FLvhQjZqvM'
         }
-      ]
+      ],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/pascals-triangle/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/pascals-triangle/"
+      },
     },
     {
       id: 11,
@@ -771,7 +817,11 @@ export interface Question {
   };`
         }
       },
-      videos: []
+      videos: [],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/merge-k-sorted-linked-lists/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/merge-k-sorted-lists/"
+      },
     },
     {
       id: 12,
@@ -852,7 +902,7 @@ export interface Question {
           }
   
           // Even length palindromes
-          l = i; r = i + 1;
+          l = i; r = i+ 1;
           while (l >= 0 && r < n && s[l] === s[r]) {
               if (r - l + 1 > longest.length) longest = s.substring(l, r + 1);
               l--;
@@ -863,7 +913,11 @@ export interface Question {
   };`
         }
       },
-      videos: []
+      videos: [],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/longest-palindrome-in-a-string1621/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/longest-palindromic-substring/"
+      },
     },
     {
       id: 13,
@@ -952,7 +1006,11 @@ export interface Question {
   };`
         }
       },
-      videos: []
+      videos: [],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/3sum/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/3sum/"
+      },
     },
     {
       id: 14,
@@ -1004,7 +1062,11 @@ export interface Question {
   };`
         }
       },
-      videos: []
+      videos: [],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/anagrams-together/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/group-anagrams/"
+      },
     },
     {
       id: 15,
@@ -1068,7 +1130,11 @@ export interface Question {
   };`
         }
       },
-      videos: []
+      videos: [],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/valid-substring0624/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/valid-parentheses/"
+      },
     },
     {
       id: 16,
@@ -1169,7 +1235,11 @@ export interface Question {
   };`
         }
       },
-      videos: []
+      videos: [],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/queue-using-two-stacks/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/implement-queue-using-stacks/"
+      },
     },
     {
       id: 17,
@@ -1245,7 +1315,11 @@ export interface Question {
   };`
         }
       },
-      videos: []
+      videos: [],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/reverse-polish-notation/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/evaluate-reverse-polish-notation/"
+      },
     },
     {
       id: 18,
@@ -1305,7 +1379,11 @@ export interface Question {
   };`
         }
       },
-      videos: []
+      videos: [],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/daily-temperatures/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/daily-temperatures/"
+      },
     },
     {
       id: 19,
@@ -1490,7 +1568,11 @@ export interface Question {
   }`
         }
       },
-      videos: []
+      videos: [],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/lru-cache/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/lru-cache/"
+      },
     },
     {
       id: 20,
@@ -1498,7 +1580,7 @@ export interface Question {
       description: "Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.",
       category: "Heap",
       difficulty: "Medium",
-      platforms: ["LeetCode",],
+      platforms: ["LeetCode"],
       companies: ["Amazon", "Google", "Microsoft"],
       solution: {
         text: "Use a min-heap to keep track of the k most frequent elements.",
@@ -1551,9 +1633,12 @@ export interface Question {
   };`
         }
       },
-      videos: []
-    },
-    
+      videos: [],
+      gfgLink: "https://practice.geeksforgeeks.org/problems/top-k-frequent-elements-1587115620/1",
+      links: {
+        LeetCode: "https://leetcode.com/problems/top-k-frequent-elements/"
+      },
+    }
   ];
   
   

@@ -11,6 +11,7 @@ import { Badge } from '@/components/ui/badge'
 import { questionSets, type QuestionSet } from '@/constants/question-sets'
 import { useProgress } from '@/hooks/use-progress'
 import { SolvedQuestions } from '@/components/solved-questions'
+import { ExternalLink } from 'lucide-react'
 
 const QUESTIONS_PER_PAGE = 10
 
@@ -45,6 +46,16 @@ export default function QuestionsPage() {
     (currentPage - 1) * QUESTIONS_PER_PAGE,
     currentPage * QUESTIONS_PER_PAGE
   )
+
+  const getPlatformLink = (question: typeof questionSets[QuestionSet][0], platform: string) => {
+    if (platform === 'LeetCode') {
+      const titleSlug = question.title.toLowerCase().replace(/\s+/g, '-')
+      return `https://leetcode.com/problems/${titleSlug}`
+    } else if (platform === 'GeeksForGeeks') {
+      return question.gfgLink || '#'
+    }
+    return '#'
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -148,8 +159,8 @@ export default function QuestionsPage() {
               </div>
               {question.platforms.map(platform => (
                 <Button key={platform} variant="outline" asChild>
-                  <Link href={`https://${platform.toLowerCase().replace(/\s+/g, '')}.com/problems/${question.title.toLowerCase().replace(/\s+/g, '-')}`} target="_blank">
-                    Solve on {platform}
+                  <Link href={getPlatformLink(question, platform)} target="_blank" rel="noopener noreferrer">
+                    Solve on {platform} <ExternalLink className="w-4 h-4 ml-2" />
                   </Link>
                 </Button>
               ))}
