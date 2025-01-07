@@ -8,6 +8,7 @@ import { useToast } from '@/components/use-toast'
 import { useProgress } from '@/hooks/use-progress'
 import { useCustomLists } from '@/hooks/use-custom-lists'
 
+
 export function DataManagement() {
   const { toast } = useToast()
   const { progress } = useProgress()
@@ -15,10 +16,7 @@ export function DataManagement() {
   const [isUploading, setIsUploading] = useState(false)
 
   const handleDownload = () => {
-    const data = {
-      progress,
-      customLists
-    }
+    const data = { progress, customLists }
     const blob = new Blob([JSON.stringify(data)], { type: 'application/json' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
@@ -29,8 +27,8 @@ export function DataManagement() {
     document.body.removeChild(a)
     URL.revokeObjectURL(url)
     toast({
-      title: "Data downloaded successfully",
-      description: "Your progress and custom lists have been saved.",
+      title: 'Data downloaded successfully',
+      description: 'Your progress and custom lists have been saved.',
     })
   }
 
@@ -42,20 +40,26 @@ export function DataManagement() {
       reader.onload = (e) => {
         try {
           const data = JSON.parse(e.target?.result as string)
+
+          // Validate the structure of the uploaded data
+          if (!data || typeof data !== 'object' || !('progress' in data && 'customLists' in data)) {
+            throw new Error('Invalid data structure')
+          }
+
           // Here you would update your global state or local storage with the uploaded data
-          // For demonstration, we'll just show a success message
           toast({
-            title: "Data uploaded successfully",
-            description: "Your progress and custom lists have been restored.",
+            title: 'Data uploaded successfully',
+            description: 'Your progress and custom lists have been restored.',
           })
         } catch (error) {
           toast({
-            title: "Error uploading data",
-            description: "There was a problem with the uploaded file.",
-            variant: "destructive",
+            title: 'Error uploading data',
+            description: 'There was a problem with the uploaded file.',
+            variant: 'destructive',
           })
+        } finally {
+          setIsUploading(false)
         }
-        setIsUploading(false)
       }
       reader.readAsText(file)
     }
@@ -79,26 +83,23 @@ export function DataManagement() {
             Download Data
           </Button>
           <div className="flex-1">
-            <input
-              type="file"
-              id="upload-input"
-              className="hidden"
-              accept=".json"
-              onChange={handleUpload}
-            />
-            <Button
-              as="label"
-              htmlFor="upload-input"
-              className="w-full"
-              disabled={isUploading}
-            >
-              <Upload className="w-4 h-4 mr-2" />
-              {isUploading ? 'Uploading...' : 'Upload Data'}
-            </Button>
+            <label htmlFor="upload-input" className="w-full">
+              <input
+                type="file"
+                id="upload-input"
+                className="hidden"
+                accept=".json"
+                onChange={handleUpload}
+                disabled={isUploading}
+              />
+              <Button className="w-full" disabled={isUploading}>
+                <Upload className="w-4 h-4 mr-2" />
+                {isUploading ? 'Uploading...' : 'Upload Data'}
+              </Button>
+            </label>
           </div>
         </div>
       </CardContent>
     </Card>
   )
 }
-
