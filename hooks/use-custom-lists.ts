@@ -1,25 +1,25 @@
-'use client'
+"use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react"
 
 interface CustomList {
-  id: string;
-  name: string;
-  questions: number[];
+  id: string
+  name: string
+  questions: number[]
 }
 
 export function useCustomLists() {
   const [customLists, setCustomLists] = useState<CustomList[]>([])
 
   useEffect(() => {
-    const savedLists = localStorage.getItem('customLists')
+    const savedLists = localStorage.getItem("customLists")
     if (savedLists) {
       setCustomLists(JSON.parse(savedLists))
     }
   }, [])
 
   const saveCustomLists = (lists: CustomList[]) => {
-    localStorage.setItem('customLists', JSON.stringify(lists))
+    localStorage.setItem("customLists", JSON.stringify(lists))
     setCustomLists(lists)
   }
 
@@ -27,17 +27,17 @@ export function useCustomLists() {
     const newList: CustomList = {
       id: Date.now().toString(),
       name,
-      questions: []
+      questions: [],
     }
     saveCustomLists([...customLists, newList])
   }
 
   const removeList = (id: string) => {
-    saveCustomLists(customLists.filter(list => list.id !== id))
+    saveCustomLists(customLists.filter((list) => list.id !== id))
   }
 
   const addQuestionToList = (listId: string, questionId: number) => {
-    const updatedLists = customLists.map(list => {
+    const updatedLists = customLists.map((list) => {
       if (list.id === listId && !list.questions.includes(questionId)) {
         return { ...list, questions: [...list.questions, questionId] }
       }
@@ -47,9 +47,9 @@ export function useCustomLists() {
   }
 
   const removeQuestionFromList = (listId: string, questionId: number) => {
-    const updatedLists = customLists.map(list => {
+    const updatedLists = customLists.map((list) => {
       if (list.id === listId) {
-        return { ...list, questions: list.questions.filter(id => id !== questionId) }
+        return { ...list, questions: list.questions.filter((id) => id !== questionId) }
       }
       return list
     })
@@ -58,10 +58,11 @@ export function useCustomLists() {
 
   return {
     customLists,
+    setCustomLists,
     addList,
     removeList,
     addQuestionToList,
-    removeQuestionFromList
+    removeQuestionFromList,
   }
 }
 

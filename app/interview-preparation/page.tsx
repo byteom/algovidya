@@ -5,8 +5,10 @@ import Link from "next/link"
 export default function InterviewPreparationPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Interview Preparation</h1>
-      
+      <h1 className="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+        Interview Preparation
+      </h1>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         <Card>
           <CardHeader>
@@ -29,7 +31,9 @@ export default function InterviewPreparationPage() {
 
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl font-semibold text-purple-600 dark:text-purple-300">Interview Tips</CardTitle>
+            <CardTitle className="text-2xl font-semibold text-purple-600 dark:text-purple-300">
+              Interview Tips
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2">
@@ -62,14 +66,12 @@ export default function InterviewPreparationPage() {
             <li>
               <h3 className="font-semibold">Recommended Books</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                "Cracking the Coding Interview" by Gayle Laakmann McDowell
+                &quot;Cracking the Coding Interview&quot; by Gayle Laakmann McDowell
               </p>
             </li>
             <li>
               <h3 className="font-semibold">Online Courses</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                AlgoExpert, LeetCode Premium, InterviewBit
-              </p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">AlgoExpert, LeetCode Premium, InterviewBit</p>
             </li>
             <li>
               <h3 className="font-semibold">YouTube Channels</h3>

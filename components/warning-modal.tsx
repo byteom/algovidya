@@ -1,8 +1,17 @@
-'use client'
+"use client"
 
-import { useState, useEffect } from 'react'
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog'
-import { AlertTriangle } from 'lucide-react'
+import { useState, useEffect } from "react"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
+import { AlertTriangle } from "lucide-react"
 
 export function WarningModal() {
   const [isOpen, setIsOpen] = useState(false)
@@ -10,14 +19,14 @@ export function WarningModal() {
   useEffect(() => {
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
       e.preventDefault()
-      e.returnValue = ''
+      e.returnValue = ""
       setIsOpen(true)
     }
 
-    window.addEventListener('beforeunload', handleBeforeUnload)
+    window.addEventListener("beforeunload", handleBeforeUnload)
 
     return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload)
+      window.removeEventListener("beforeunload", handleBeforeUnload)
     }
   }, [])
 
@@ -40,7 +49,8 @@ export function WarningModal() {
             Warning: Unsaved Data
           </AlertDialogTitle>
           <AlertDialogDescription>
-            You have unsaved progress. Are you sure you want to leave? Your changes may be lost if you haven't downloaded your data.
+            You have unsaved progress. Are you sure you want to leave? Your changes may be lost if you haven&apos;t
+            downloaded your data.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

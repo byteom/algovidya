@@ -1,22 +1,23 @@
-'use client'
+"use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
-import { useProgress } from '@/hooks/use-progress'
-import { questionSets } from '@/constants/question-sets'
+import { useProgress } from "@/hooks/use-progress"
+import { questionSets } from "@/constants/question-sets"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { Trophy, Zap } from "lucide-react"
 
 export function ProgressDashboard() {
   const { progress } = useProgress()
-  const [selectedSet, setSelectedSet] = useState<string>('450')
+  const [selectedSet, setSelectedSet] = useState<string>("450")
   const [completionPercentage, setCompletionPercentage] = useState(0)
 
   useEffect(() => {
     const totalQuestions = questionSets[selectedSet as keyof typeof questionSets].length
-    const completedQuestions = progress.completedQuestions.filter(id => 
-      questionSets[selectedSet as keyof typeof questionSets].some(q => q.id === id)
+    const completedQuestions = progress.completedQuestions.filter((id) =>
+      questionSets[selectedSet as keyof typeof questionSets].some((q) => q.id === id),
     ).length
     setCompletionPercentage(Math.round((completedQuestions / totalQuestions) * 100))
   }, [selectedSet, progress])
@@ -47,11 +48,25 @@ export function ProgressDashboard() {
           </div>
           <Progress value={completionPercentage} className="w-full" />
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            You've completed {completionPercentage}% of the {selectedSet} DSA Questions set.
+            You&apos;ve completed {completionPercentage}% of the {selectedSet} DSA Questions set.
           </p>
-          <div className="mt-4">
-            <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Total Solved Questions</p>
-            <p className="text-2xl font-bold">{progress.completedQuestions.length}</p>
+          <div className="flex justify-between items-center mt-4">
+            <div>
+              <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Total Solved Questions</p>
+              <p className="text-2xl font-bold">{progress.completedQuestions.length}</p>
+            </div>
+            <div>
+              <p className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                <Trophy className="w-4 h-4 mr-1" /> Points
+              </p>
+              <p className="text-2xl font-bold">{progress.points}</p>
+            </div>
+            <div>
+              <p className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                <Zap className="w-4 h-4 mr-1" /> Streak
+              </p>
+              <p className="text-2xl font-bold">{progress.streak} days</p>
+            </div>
           </div>
           <Button asChild className="w-full mt-4">
             <Link href="/solved-questions">View Solved Questions</Link>

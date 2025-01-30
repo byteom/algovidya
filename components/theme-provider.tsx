@@ -1,14 +1,9 @@
-'use client'
+"use client"
 
-import { ThemeProvider as NextThemesProvider } from 'next-themes'
+import { ThemeProvider as NextThemesProvider } from "next-themes"
+import type { ThemeProviderProps } from "next-themes/dist/types"
 
-// Infer the props directly from NextThemesProvider
-interface CustomThemeProviderProps extends React.ComponentProps<typeof NextThemesProvider> {}
-
-export function ThemeProvider({ children, ...props }: CustomThemeProviderProps) {
-  return (
-    <NextThemesProvider {...props}>
-      {children}
-    </NextThemesProvider>
-  )
+export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }
+

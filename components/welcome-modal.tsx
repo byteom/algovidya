@@ -1,40 +1,50 @@
-'use client'
+"use client"
 
-import { useState, useEffect } from 'react'
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog"
+import { useState, useEffect } from "react"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 
 export function WelcomeModal() {
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
-    const hasVisited = localStorage.getItem('hasVisitedBefore')
-    if (!hasVisited) {
+    const hasSeenWelcome = localStorage.getItem("hasSeenWelcome")
+    if (!hasSeenWelcome) {
       setIsOpen(true)
-      localStorage.setItem('hasVisitedBefore', 'true')
     }
   }, [])
+
+  const handleClose = () => {
+    setIsOpen(false)
+    localStorage.setItem("hasSeenWelcome", "true")
+  }
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Welcome to AlgoVidya!</DialogTitle>
-          <DialogDescription>
-            Your journey to mastering Data Structures and Algorithms starts here.
-          </DialogDescription>
+          <DialogTitle>Welcome to AlgoVidya</DialogTitle>
+          <DialogDescription>Learn Data Structures and Algorithms interactively</DialogDescription>
         </DialogHeader>
-        <div className="py-4">
-          <h3 className="font-semibold mb-2">Here's how to get started:</h3>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Browse our curated question sets</li>
-            <li>Click on a question to view detailed solutions and video explanations</li>
-            <li>Mark questions as completed to track your progress</li>
-            <li>Use the AI-powered recommender for personalized learning</li>
+        <div className="grid gap-4 py-4">
+          <p>We&apos;re excited to help you master Data Structures and Algorithms. Here&apos;s what you can expect:</p>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Curated question sets for efficient learning</li>
+            <li>Interactive coding environment</li>
+            <li>AI-powered personalized learning path</li>
+            <li>Progress tracking with detailed analytics</li>
+            <li>Daily challenges to keep you motivated</li>
           </ul>
         </div>
         <DialogFooter>
-          <Button onClick={() => setIsOpen(false)}>Get Started</Button>
+          <Button onClick={handleClose}>Get Started</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
