@@ -1,15 +1,22 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ProgressDashboard } from "@/components/progress-dashboard"
-import { QuestionRecommender } from "@/components/question-recommender"
-import { DataManagement } from "@/components/data-management"
-import { WarningModal } from "@/components/warning-modal"
-import { DailyChallenge } from "@/components/daily-challenge"
-import { Leaderboard } from "@/components/leaderboard"
-import { ArrowRight, Brain, Code2, Sparkles, Target, Trophy } from "lucide-react"
-import { AnimatedHero } from "@/components/animated-hero"
-import { AnimatedCard } from "@/components/animated-card"
-import { AnimatedFeature } from "@/components/animated-feature"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ProgressDashboard } from "@/components/progress-dashboard";
+import { QuestionRecommender } from "@/components/question-recommender";
+import { DataManagement } from "@/components/data-management";
+import { WarningModal } from "@/components/warning-modal";
+import { DailyChallenge } from "@/components/daily-challenge";
+import { Leaderboard } from "@/components/leaderboard";
+import {
+  ArrowRight,
+  Brain,
+  Code2,
+  Sparkles,
+  Target,
+  Trophy,
+} from "lucide-react";
+import { AnimatedHero } from "@/components/animated-hero";
+import { AnimatedCard } from "@/components/animated-card";
+import { AnimatedFeature } from "@/components/animated-feature";
 
 export default function Home() {
   return (
@@ -21,29 +28,33 @@ export default function Home() {
 
         {/* Stats Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <div className="bg-gradient-to-br from-purple-500/10 to-indigo-500/10 p-6 rounded-lg backdrop-blur-sm border border-purple-200 dark:border-purple-800">
+          <div className="bg-gradient-to-br from-purple-500/10 to-indigo-500/10 p-6 rounded-xl backdrop-blur-sm border border-purple-200 dark:border-purple-800 shadow-lg">
             <div className="flex items-center gap-4">
-              <Trophy className="w-8 h-8 text-purple-500" />
+              <Trophy className="w-10 h-10 text-purple-500" />
               <div>
-                <h3 className="text-2xl font-bold">450+</h3>
-                <p className="text-gray-600 dark:text-gray-400">DSA Questions</p>
+                <h3 className="text-3xl font-bold">450+</h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  DSA Questions
+                </p>
               </div>
             </div>
           </div>
-          <div className="bg-gradient-to-br from-pink-500/10 to-purple-500/10 p-6 rounded-lg backdrop-blur-sm border border-pink-200 dark:border-pink-800">
+          <div className="bg-gradient-to-br from-pink-500/10 to-purple-500/10 p-6 rounded-xl backdrop-blur-sm border border-pink-200 dark:border-pink-800 shadow-lg">
             <div className="flex items-center gap-4">
-              <Brain className="w-8 h-8 text-pink-500" />
+              <Brain className="w-10 h-10 text-pink-500" />
               <div>
-                <h3 className="text-2xl font-bold">AI Powered</h3>
-                <p className="text-gray-600 dark:text-gray-400">Learning Path</p>
+                <h3 className="text-3xl font-bold">AI Powered</h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Learning Path
+                </p>
               </div>
             </div>
           </div>
-          <div className="bg-gradient-to-br from-indigo-500/10 to-blue-500/10 p-6 rounded-lg backdrop-blur-sm border border-indigo-200 dark:border-indigo-800">
+          <div className="bg-gradient-to-br from-indigo-500/10 to-blue-500/10 p-6 rounded-xl backdrop-blur-sm border border-indigo-200 dark:border-indigo-800 shadow-lg">
             <div className="flex items-center gap-4">
-              <Target className="w-8 h-8 text-indigo-500" />
+              <Target className="w-10 h-10 text-indigo-500" />
               <div>
-                <h3 className="text-2xl font-bold">100%</h3>
+                <h3 className="text-3xl font-bold">100%</h3>
                 <p className="text-gray-600 dark:text-gray-400">Success Rate</p>
               </div>
             </div>
@@ -101,14 +112,34 @@ export default function Home() {
 
         {/* Features Section */}
         <div className="text-center mb-12 bg-gradient-to-r from-purple-100 to-indigo-100 dark:from-purple-900/50 dark:to-indigo-900/50 p-8 rounded-lg backdrop-blur-sm">
-          <h2 className="text-3xl font-bold mb-4 text-purple-600 dark:text-purple-300">Why Choose AlgoVidya?</h2>
+          <h2 className="text-3xl font-bold mb-4 text-purple-600 dark:text-purple-300">
+            Why Choose AlgoVidya?
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            <AnimatedFeature icon={<Code2 className="w-6 h-6" />} text="Curated question sets for efficient learning" />
-            <AnimatedFeature icon={<Brain className="w-6 h-6" />} text="AI-powered personalized learning path" />
-            <AnimatedFeature icon={<Target className="w-6 h-6" />} text="Track your progress with detailed analytics" />
-            <AnimatedFeature icon={<Trophy className="w-6 h-6" />} text="Daily challenges to keep you motivated" />
-            <AnimatedFeature icon={<Sparkles className="w-6 h-6" />} text="Interactive coding environment" />
-            <AnimatedFeature icon={<ArrowRight className="w-6 h-6" />} text="Compete on the leaderboard" />
+            <AnimatedFeature
+              icon={<Code2 className="w-6 h-6" />}
+              text="Curated question sets for efficient learning"
+            />
+            <AnimatedFeature
+              icon={<Brain className="w-6 h-6" />}
+              text="AI-powered personalized learning path"
+            />
+            <AnimatedFeature
+              icon={<Target className="w-6 h-6" />}
+              text="Track your progress with detailed analytics"
+            />
+            <AnimatedFeature
+              icon={<Trophy className="w-6 h-6" />}
+              text="Daily challenges to keep you motivated"
+            />
+            <AnimatedFeature
+              icon={<Sparkles className="w-6 h-6" />}
+              text="Interactive coding environment"
+            />
+            <AnimatedFeature
+              icon={<ArrowRight className="w-6 h-6" />}
+              text="Compete on the leaderboard"
+            />
           </div>
         </div>
 
@@ -118,7 +149,9 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-4 relative z-10">
             Ready to start your DSA journey, future tech leaders of India?
           </h2>
-          <p className="mb-6 text-xl relative z-10">Choose a question set and begin your path to mastery!</p>
+          <p className="mb-6 text-xl relative z-10">
+            Choose a question set and begin your path to mastery!
+          </p>
           <div className="flex justify-center space-x-4 relative z-10">
             <Link href="/questions?set=100">
               <Button variant="secondary" size="lg" className="group">
@@ -136,6 +169,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
